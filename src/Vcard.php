@@ -174,6 +174,7 @@ class Vcard implements Responsable, Stringable
             $this->hasNameParts() ? "N;CHARSET=UTF-8:{$this->lastName};{$this->firstName};{$this->middleName};{$this->namePrefix};{$this->nameSuffix}" : null,
             array_map('strval', $this->properties),
             sprintf('REV:%s', Carbon::now()->toISOString()),
+            'PRODID:-//app.tapcard.ch',
             'END:VCARD',
         ])->flatten()->filter()->implode(PHP_EOL);
     }
