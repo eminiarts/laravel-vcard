@@ -10,6 +10,6 @@ class Note extends Property
 
     public function __toString(): string
     {
-        return "NOTE:{$this->note}";
+        return "NOTE;{$this->note}";
     }
 }
