@@ -183,7 +183,7 @@ class Vcard implements Responsable, Stringable
             array_map('strval', $this->properties),
             sprintf('REV:%s', Carbon::now()->toISOString()),
             'PRODID:-//app.tapcard.ch',
-            'END:VCARD',
+            'END:VCARD  ',
         ])->flatten()->filter()->implode(PHP_EOL);
     }
 
