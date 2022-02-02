@@ -195,9 +195,7 @@ class Vcard implements Responsable, Stringable
         $filename = Str::of($this->getFullName())->slug('_')->append('.vcf');
 
         return new Response($content, 200, [
-            'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
             'Content-Type' => 'text/vcard',
-            'Content-Length' => Str::length($content),
             'Content-Disposition' => HeaderUtils::makeDisposition(
                 HeaderUtils::DISPOSITION_ATTACHMENT,
                 $filename,
